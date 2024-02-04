@@ -1,0 +1,31 @@
+nav {
+    background-color: rgb(1, 123, 255);
+    font-size: 2.5rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+
+    h1 {
+        margin: 0;
+        padding: 1rem 2rem;
+    }
+
+    .nav__list {
+        display: flex;
+
+        li {
+            a {
+                color: white;
+                padding: 1rem 2rem;
+
+                &:hover {
+                    background-color: #3498db;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+        }
+    }
+
+}

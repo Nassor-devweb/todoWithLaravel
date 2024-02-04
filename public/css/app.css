@@ -1,0 +1,76 @@
+.contenaire-accueil {
+  padding: 2rem 6rem 2rem 6rem;
+}
+.contenaire-accueil .content {
+  background-color: rgb(231, 236, 239);
+  padding: 2rem 2rem;
+  font-size: 1.6rem;
+}
+.contenaire-accueil .content .title {
+  font-size: 5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.contenaire-accueil .content .title + span {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+.contenaire-accueil .content .content-yellow-paragraphe {
+  padding: 1.5rem;
+  background-color: rgb(250, 187, 8);
+}
+.contenaire-accueil .content .content-yellow-paragraphe span {
+  color: white;
+  font-weight: 700;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.3rem;
+  background-color: #3498db;
+  box-shadow: rgb(250, 187, 8) 0.5rem 0.5rem 0.5rem;
+}
+
+nav {
+  background-color: rgb(1, 123, 255);
+  font-size: 2.5rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+nav h1 {
+  margin: 0;
+  padding: 1rem 2rem;
+}
+nav .nav__list {
+  display: flex;
+}
+nav .nav__list li a {
+  color: white;
+  padding: 1rem 2rem;
+}
+nav .nav__list li a:hover {
+  background-color: #3498db;
+  transition: all 0.2s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=app.css.map */

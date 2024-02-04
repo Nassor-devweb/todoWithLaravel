@@ -9,4 +9,9 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+
+    function getName(Request $name)
+    {
+        return 'Hello ' . $name;
+    }
 }

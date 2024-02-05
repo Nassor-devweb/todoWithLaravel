@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('accueil');
-})->name('accueil');
+Route::get('/', [TodoController::class, "getAllTodos"])->name('accueil');
 
 Route::get('/hello/{name}', [UserController::class, 'getName']);
 

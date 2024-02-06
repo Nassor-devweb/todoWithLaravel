@@ -6,14 +6,21 @@ html {
     font-size: 62.5%;
 }
 
-body {
+body,p {
     margin: 0;
+}
+ul {
+    padding: 0!important;
+    margin: 0!important;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none!important;
 }
 
 li {
     list-style-type: none;
+}
+.butn {
+    cursor: pointer;
 }

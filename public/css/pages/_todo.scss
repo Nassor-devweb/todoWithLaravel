@@ -1,0 +1,160 @@
+.todoContenaire {
+    padding: 2rem 6rem 2rem 6rem;
+    font-size: 1.6rem;
+
+    .filterTodo {
+        font-size: 1.6rem;
+        display: flex;
+        justify-content: center;
+        .filterTodo__button {
+            padding: 1rem 1rem;
+            margin-right: 1rem;
+            border-radius: 5px;
+            font-size: 2rem;
+        }
+        .filterTodo__button.addTodo {
+            background-color: $primary-color;
+            a {
+                color: white;
+            }
+        }
+        .filterTodo__button.undoneTodo {
+            background-color: $ouverteColor;
+            a {
+                color: black;
+            }
+        }
+        .filterTodo__button.terminateTodo {
+            background-color: $doneColor;
+            a {
+                color: white;
+            }
+        }
+        .filterTodo__button.allTodos{
+            background-color: $undone;
+            a {
+                color: white;
+            }
+        }
+    }
+    .filter-heading {
+        font-weight: 600;
+        font-size: 2rem;
+        margin: 2rem 0;
+    }
+    .todoContent{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        .todo {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            background-color: $myTodoColor;
+            border-radius: 3px;
+            margin-bottom: 2rem;
+            width: 100%;
+
+            .todo__info {
+                display: flex;
+                flex-direction: column;
+                p {
+                    .id-todo {
+                        padding: 0.2rem 0.4rem;
+                        background-color: $idColor ;
+                        color: white;
+                        border-radius: 3px;
+
+                        margin-right: 0.5rem;
+                    }
+                    .tacheDone {
+                        padding: 0.2rem 0.4rem;
+                        background-color: $doneColor;
+                        color: white;
+                        border-radius: 3px;
+                        cursor: pointer;
+                    }
+                    .fa-solid {
+                        margin-right: 1rem;
+                        transition: all 1s ease-in-out;
+
+                    }
+                    .rotate-arrow {
+                        animation: rotate-arrow 0.1s ease-in-out both;
+                    }
+                }
+                .todo-name {
+                    font-weight: 700;
+                }
+                p:nth-child(1) {
+                    margin-bottom: 1rem;
+                }
+                p:nth-child(2) {
+                    cursor: pointer;
+                }
+                .description {
+                    margin-left: 1.6rem ;
+                    overflow: hidden;
+                    height: 0px;
+                }
+                .description.active {
+                    height: auto;
+                    transition: all 1s ease-in-out;
+                }
+
+            }
+            .todo__button {
+                display: flex;
+                align-items: center;
+                .todo__button__action {
+                    padding: 1rem 1rem;
+                    border-radius: 5px;
+                    margin: 0 1rem;
+                }
+                .todo__button__action.done {
+                    background-color: $doneColor;
+                    color: white;
+                }
+                .todo__button__action.edit {
+                    background-color: $editerColor;
+                    color: white;
+                }
+                .todo__button__action.effacer {
+                    background-color: $effacerColor;
+                    color: white;
+                }
+            }
+        }
+       nav {
+            font-size: 1.2rem;
+            .flex.justify-between.flex-1{
+                display: none;
+            }
+            div:nth-child(2){
+                display: flex;
+                align-items: center;
+                div:nth-child(1){
+                    display: none;
+                }
+                span {
+                    display: flex;
+                }
+                svg {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+            }
+
+        }
+    }
+}
+
+@keyframes rotate-arrow {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}

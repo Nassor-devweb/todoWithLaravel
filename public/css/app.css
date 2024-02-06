@@ -28,27 +28,179 @@
   box-shadow: rgb(250, 187, 8) 0.5rem 0.5rem 0.5rem;
 }
 
-nav {
+.todoContenaire {
+  padding: 2rem 6rem 2rem 6rem;
+  font-size: 1.6rem;
+}
+.todoContenaire .filterTodo {
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+}
+.todoContenaire .filterTodo .filterTodo__button {
+  padding: 1rem 1rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+  font-size: 2rem;
+}
+.todoContenaire .filterTodo .filterTodo__button.addTodo {
+  background-color: #017bff;
+}
+.todoContenaire .filterTodo .filterTodo__button.addTodo a {
+  color: white;
+}
+.todoContenaire .filterTodo .filterTodo__button.undoneTodo {
+  background-color: #ffbf0a;
+}
+.todoContenaire .filterTodo .filterTodo__button.undoneTodo a {
+  color: black;
+}
+.todoContenaire .filterTodo .filterTodo__button.terminateTodo {
+  background-color: #27a648;
+}
+.todoContenaire .filterTodo .filterTodo__button.terminateTodo a {
+  color: white;
+}
+.todoContenaire .filterTodo .filterTodo__button.allTodos {
+  background-color: #363944;
+}
+.todoContenaire .filterTodo .filterTodo__button.allTodos a {
+  color: white;
+}
+.todoContenaire .filter-heading {
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+.todoContenaire .todoContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.todoContenaire .todoContent .todo {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff2d0;
+  border-radius: 3px;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.todoContenaire .todoContent .todo .todo__info {
+  display: flex;
+  flex-direction: column;
+}
+.todoContenaire .todoContent .todo .todo__info p .id-todo {
+  padding: 0.2rem 0.4rem;
+  background-color: #353a42;
+  color: white;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+}
+.todoContenaire .todoContent .todo .todo__info p .tacheDone {
+  padding: 0.2rem 0.4rem;
+  background-color: #27a648;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.todoContenaire .todoContent .todo .todo__info p .fa-solid {
+  margin-right: 1rem;
+  transition: all 1s ease-in-out;
+}
+.todoContenaire .todoContent .todo .todo__info p .rotate-arrow {
+  animation: rotate-arrow 0.1s ease-in-out both;
+}
+.todoContenaire .todoContent .todo .todo__info .todo-name {
+  font-weight: 700;
+}
+.todoContenaire .todoContent .todo .todo__info p:nth-child(1) {
+  margin-bottom: 1rem;
+}
+.todoContenaire .todoContent .todo .todo__info p:nth-child(2) {
+  cursor: pointer;
+}
+.todoContenaire .todoContent .todo .todo__info .description {
+  margin-left: 1.6rem;
+  overflow: hidden;
+  height: 0px;
+}
+.todoContenaire .todoContent .todo .todo__info .description.active {
+  height: auto;
+  transition: all 1s ease-in-out;
+}
+.todoContenaire .todoContent .todo .todo__button {
+  display: flex;
+  align-items: center;
+}
+.todoContenaire .todoContent .todo .todo__button .todo__button__action {
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  margin: 0 1rem;
+}
+.todoContenaire .todoContent .todo .todo__button .todo__button__action.done {
+  background-color: #27a648;
+  color: white;
+}
+.todoContenaire .todoContent .todo .todo__button .todo__button__action.edit {
+  background-color: #19a2b4;
+  color: white;
+}
+.todoContenaire .todoContent .todo .todo__button .todo__button__action.effacer {
+  background-color: #dc3645;
+  color: white;
+}
+.todoContenaire .todoContent nav {
+  font-size: 1.2rem;
+}
+.todoContenaire .todoContent nav .flex.justify-between.flex-1 {
+  display: none;
+}
+.todoContenaire .todoContent nav div:nth-child(2) {
+  display: flex;
+  align-items: center;
+}
+.todoContenaire .todoContent nav div:nth-child(2) div:nth-child(1) {
+  display: none;
+}
+.todoContenaire .todoContent nav div:nth-child(2) span {
+  display: flex;
+}
+.todoContenaire .todoContent nav div:nth-child(2) svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+@keyframes rotate-arrow {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(90deg);
+  }
+}
+.navigation {
   background-color: rgb(1, 123, 255);
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem;
 }
-nav h1 {
+.navigation h1 {
   margin: 0;
   padding: 1rem 2rem;
 }
-nav .nav__list {
+.navigation .nav__list {
   display: flex;
 }
-nav .nav__list li a {
+.navigation .nav__list li a {
   color: white;
   padding: 1rem 2rem;
 }
-nav .nav__list li a:hover {
+.navigation .nav__list li a:hover {
   background-color: #3498db;
   transition: all 0.2s ease-in-out;
 }
@@ -61,16 +213,25 @@ html {
   font-size: 62.5%;
 }
 
-body {
+body, p {
   margin: 0;
 }
 
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 li {
   list-style-type: none;
+}
+
+.butn {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=app.css.map */

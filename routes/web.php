@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TodoController::class, "getAllTodos"])->name('accueil');
+Route::get('done', [TodoController::class, "todosDone"])->name('todos.done');
+Route::get('undone', [TodoController::class, "todosUndone"])->name('todos.undone');
+
 
 Route::get('/hello/{name}', [UserController::class, 'getName']);
 

@@ -10,10 +10,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/245b35fcab.js" crossorigin="anonymous"></script>
+    <script type="module" src="./js/app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body class="antialiased">
-    <nav class="">
+    <div class="navigation">
         @auth
             <h1>Nas-Todo</h1>
             <div>
@@ -27,7 +31,7 @@
                 <li><a href="{{ route('register') }}">S'inscrire</a></li>
             </ul>
         @endauth
-    </nav>
+    </div>
     <main>
         @yield('content')
     </main>

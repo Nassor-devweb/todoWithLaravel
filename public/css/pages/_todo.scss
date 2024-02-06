@@ -51,7 +51,6 @@
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
-            background-color: $myTodoColor;
             border-radius: 3px;
             margin-bottom: 2rem;
             width: 100%;
@@ -109,8 +108,10 @@
                 align-items: center;
                 .todo__button__action {
                     padding: 1rem 1rem;
+                    border: none;
                     border-radius: 5px;
                     margin: 0 1rem;
+                    box-shadow: $box-shadow;
                 }
                 .todo__button__action.done {
                     background-color: $doneColor;
@@ -124,9 +125,19 @@
                     background-color: $effacerColor;
                     color: white;
                 }
+                .todo__button__action.undone {
+                    background-color: $ouverteColor;
+                    color: black;
+                }
             }
         }
-       nav {
+        .todo-done {
+            background-color: $todoDoneContenaire;
+        }
+        .todo-undone {
+            background-color: $myTodoColor;
+        }
+        nav {
             font-size: 1.2rem;
             .flex.justify-between.flex-1{
                 display: none;

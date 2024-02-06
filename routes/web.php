@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TodoController;
+use App\Models\Todo;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +18,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TodoController::class, "getAllTodos"])->name('accueil');
-Route::get('done', [TodoController::class, "todosDone"])->name('todos.done');
-Route::get('undone', [TodoController::class, "todosUndone"])->name('todos.undone');
+Route::get('/done', [TodoController::class, "todosDone"])->name('todos.done');
+Route::get('/undone', [TodoController::class, "todosUndone"])->name('todos.undone');
+Route::get('/create-todo', [TodoController::class, 'create'])->name('todo.create');
+Route::post('/store', [TodoController::class, 'store'])->name('todo.store');
+Route::patch('/setDone', [TodoController::class, 'setDone'])->name('todo.setDone');
+Route::patch('/SetUndone', [TodoController::class, 'SetUndone'])->name('todo.SetUndone');
+Route::delete('/delete', [TodoController::class, 'deleteTodo'])->name('todo.delete');
+
 
 
 Route::get('/hello/{name}', [UserController::class, 'getName']);

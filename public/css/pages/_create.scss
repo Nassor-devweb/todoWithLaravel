@@ -1,0 +1,18 @@
+.form-contenaire {
+    width: 30%;
+    margin: 20rem auto;
+    font-size: 1.6rem;
+    label {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    input,textarea {
+        font-size: 1.6rem;
+    }
+    .btn {
+        margin-top: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.6rem;
+    }
+}

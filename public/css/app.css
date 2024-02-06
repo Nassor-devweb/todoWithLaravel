@@ -1,3 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body, p {
+  margin: 0;
+}
+
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+li {
+  list-style-type: none;
+}
+
+.butn {
+  cursor: pointer;
+}
+
 .contenaire-accueil {
   padding: 2rem 6rem 2rem 6rem;
 }
@@ -82,7 +111,6 @@
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
-  background-color: #fff2d0;
   border-radius: 3px;
   margin-bottom: 2rem;
   width: 100%;
@@ -136,8 +164,10 @@
 }
 .todoContenaire .todoContent .todo .todo__button .todo__button__action {
   padding: 1rem 1rem;
+  border: none;
   border-radius: 5px;
   margin: 0 1rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .todoContenaire .todoContent .todo .todo__button .todo__button__action.done {
   background-color: #27a648;
@@ -150,6 +180,16 @@
 .todoContenaire .todoContent .todo .todo__button .todo__button__action.effacer {
   background-color: #dc3645;
   color: white;
+}
+.todoContenaire .todoContent .todo .todo__button .todo__button__action.undone {
+  background-color: #ffbf0a;
+  color: black;
+}
+.todoContenaire .todoContent .todo-done {
+  background-color: #d3ecd8;
+}
+.todoContenaire .todoContent .todo-undone {
+  background-color: #fff2d0;
 }
 .todoContenaire .todoContent nav {
   font-size: 1.2rem;
@@ -205,33 +245,23 @@
   transition: all 0.2s ease-in-out;
 }
 
-* {
-  box-sizing: border-box;
+.form-contenaire {
+  width: 30%;
+  margin: 20rem auto;
+  font-size: 1.6rem;
 }
-
-html {
-  font-size: 62.5%;
+.form-contenaire label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
-
-body, p {
-  margin: 0;
+.form-contenaire input, .form-contenaire textarea {
+  font-size: 1.6rem;
 }
-
-ul {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-a {
-  text-decoration: none !important;
-}
-
-li {
-  list-style-type: none;
-}
-
-.butn {
-  cursor: pointer;
+.form-contenaire .btn {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.6rem;
 }
 
 /*# sourceMappingURL=app.css.map */

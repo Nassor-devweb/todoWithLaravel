@@ -17,18 +17,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TodoController::class, "getAllTodos"])->name('accueil');
+Route::get('/', [TodoController::class, "getAllTodos"])->name('accueil')->middleware('auth');
 Route::get('/done', [TodoController::class, "todosDone"])->name('todos.done');
 Route::get('/undone', [TodoController::class, "todosUndone"])->name('todos.undone');
 Route::get('/create-todo', [TodoController::class, 'create'])->name('todo.create');
 Route::post('/store', [TodoController::class, 'store'])->name('todo.store');
 Route::patch('/setDone', [TodoController::class, 'setDone'])->name('todo.setDone');
 Route::patch('/SetUndone', [TodoController::class, 'SetUndone'])->name('todo.SetUndone');
+
+Route::get('/deleteTodoConfirm/{id}', [TodoController::class, 'confirmDelete'])->name('todo.confirm-delete');
 Route::delete('/delete', [TodoController::class, 'deleteTodo'])->name('todo.delete');
 
+Route::get('/editTodo/{idTodo}', [TodoController::class, 'editGetTodo'])->name('todo.getEdit');
 
+Route::patch('/updateTodo', [TodoController::class, 'updateTodo'])->name('todo.update');
 
-Route::get('/hello/{name}', [UserController::class, 'getName']);
+Route::get('/todo/{todo}/affectedTo/{user}', [TodoController::class, 'affectedTo'])->name('todo.affectedTo');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

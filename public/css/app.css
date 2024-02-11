@@ -11,8 +11,8 @@ body, p {
 }
 
 ul {
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0;
+  margin: 0;
 }
 
 a {
@@ -58,7 +58,7 @@ li {
 }
 
 .todoContenaire {
-  padding: 2rem 6rem 2rem 6rem;
+  padding: 3.5rem 6rem 2rem 6rem;
   font-size: 1.6rem;
 }
 .todoContenaire .filterTodo {
@@ -71,6 +71,7 @@ li {
   margin-right: 1rem;
   border-radius: 5px;
   font-size: 2rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .todoContenaire .filterTodo .filterTodo__button.addTodo {
   background-color: #017bff;
@@ -78,11 +79,17 @@ li {
 .todoContenaire .filterTodo .filterTodo__button.addTodo a {
   color: white;
 }
+.todoContenaire .filterTodo .filterTodo__button.addTodo:hover {
+  background-color: #0062cd;
+}
 .todoContenaire .filterTodo .filterTodo__button.undoneTodo {
   background-color: #ffbf0a;
 }
 .todoContenaire .filterTodo .filterTodo__button.undoneTodo a {
   color: black;
+}
+.todoContenaire .filterTodo .filterTodo__button.undoneTodo:hover {
+  background-color: #d69e00;
 }
 .todoContenaire .filterTodo .filterTodo__button.terminateTodo {
   background-color: #27a648;
@@ -90,11 +97,17 @@ li {
 .todoContenaire .filterTodo .filterTodo__button.terminateTodo a {
   color: white;
 }
+.todoContenaire .filterTodo .filterTodo__button.terminateTodo:hover {
+  background-color: #1d7d36;
+}
 .todoContenaire .filterTodo .filterTodo__button.allTodos {
   background-color: #363944;
 }
 .todoContenaire .filterTodo .filterTodo__button.allTodos a {
   color: white;
+}
+.todoContenaire .filterTodo .filterTodo__button.allTodos:hover {
+  background-color: #1f2128;
 }
 .todoContenaire .filter-heading {
   font-weight: 600;
@@ -118,6 +131,7 @@ li {
 .todoContenaire .todoContent .todo .todo__info {
   display: flex;
   flex-direction: column;
+  flex: 1.5;
 }
 .todoContenaire .todoContent .todo .todo__info p .id-todo {
   padding: 0.2rem 0.4rem;
@@ -161,12 +175,46 @@ li {
 .todoContenaire .todoContent .todo .todo__button {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+.todoContenaire .todoContent .todo .todo__button .affectedContenaire {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.todoContenaire .todoContent .todo .todo__button .affectedContenaire .listUserAffected {
+  z-index: 500;
+  position: absolute;
+  top: 45px;
+  background-color: white;
+  width: 150%;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.2s ease-in-out;
+}
+.todoContenaire .todoContent .todo .todo__button .affectedContenaire .listUserAffected li {
+  padding: 0.3rem 0.3rem;
+}
+.todoContenaire .todoContent .todo .todo__button .affectedContenaire .listUserAffected li a {
+  color: black;
+  font-size: 1.6rem;
+}
+.todoContenaire .todoContent .todo .todo__button .affectedContenaire .listUserAffected li:hover {
+  background-color: #bdc3c7;
+  font-weight: bold;
+}
+.todoContenaire .todoContent .todo .todo__button .affectedContenaire ul.activeListe {
+  padding: 0.3rem 0.5rem;
+  height: auto;
+  transition: all 0.1s ease-out;
 }
 .todoContenaire .todoContent .todo .todo__button .todo__button__action {
   padding: 1rem 1rem;
   border: none;
   border-radius: 5px;
-  margin: 0 1rem;
+  margin-right: 1.5rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .todoContenaire .todoContent .todo .todo__button .todo__button__action.done {
@@ -174,6 +222,11 @@ li {
   color: white;
 }
 .todoContenaire .todoContent .todo .todo__button .todo__button__action.edit {
+  background-color: #19a2b4;
+}
+.todoContenaire .todoContent .todo .todo__button .todo__button__action.edit button {
+  padding: 0;
+  border: 0;
   background-color: #19a2b4;
   color: white;
 }
@@ -184,6 +237,17 @@ li {
 .todoContenaire .todoContent .todo .todo__button .todo__button__action.undone {
   background-color: #ffbf0a;
   color: black;
+}
+.todoContenaire .todoContent .todo .todo__button .todo__button__action.affected {
+  background-color: #68737c;
+  color: white;
+}
+.todoContenaire .todoContent .todo .todo__button .todo__button__action.affected span {
+  display: flex;
+  align-items: center;
+}
+.todoContenaire .todoContent .todo .todo__button .todo__button__action.affected span .fa-solid {
+  margin-left: 1rem;
 }
 .todoContenaire .todoContent .todo-done {
   background-color: #d3ecd8;
@@ -227,22 +291,124 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 2rem;
+  padding: 0rem 2rem;
+  height: 5.6rem;
 }
 .navigation h1 {
   margin: 0;
-  padding: 1rem 2rem;
+  font-size: 2rem;
+  padding: 0.5rem 2rem;
 }
-.navigation .nav__list {
+.navigation .navContenaire__account {
+  position: relative;
   display: flex;
 }
-.navigation .nav__list li a {
-  color: white;
-  padding: 1rem 2rem;
+.navigation .navContenaire__account .notificationContener .notificationContener__icone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+  background-color: #0067d7;
+  border-radius: 50%;
 }
-.navigation .nav__list li a:hover {
-  background-color: #3498db;
+.navigation .navContenaire__account .notificationContener .notificationContener__icone .fa-solid {
+  font-size: 2rem;
+}
+.navigation .navContenaire__account .notificationContener .notificationContener__icone .notificationContener__number {
+  border-radius: 50%;
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  background-color: #e41e3f;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(40%, -20%);
+}
+.navigation .navContenaire__account .userInfo {
+  margin: 0 2rem;
+}
+.navigation .navContenaire__account .userInfo .contentImg {
+  position: relative;
+}
+.navigation .navContenaire__account .userInfo .contentImg img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.navigation .navContenaire__account .userInfo .contentImg .fa-solid {
+  position: absolute;
+  bottom: -0.5rem;
+}
+.navigation .navContenaire__account .userInfo .nav__list {
+  min-width: 20rem;
+  font-size: 2rem;
+}
+.navigation .navContenaire__account .userInfo .nav__list li {
+  padding: 1rem 1rem;
+}
+.navigation .navContenaire__account .userInfo .nav__list li a {
+  color: white;
+}
+.navigation .navContenaire__account .nav__list.login {
+  background-color: #ecf0f1;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  bottom: -16rem;
+  z-index: 500;
+}
+.navigation .navContenaire__account .nav__list.login li {
+  border-top: 0.05rem solid #bdc3c7;
+}
+.navigation .navContenaire__account .nav__list.login li a {
+  color: black !important;
+  display: flex;
+  align-items: center;
+}
+.navigation .navContenaire__account .nav__list.login li a .fa-regular, .navigation .navContenaire__account .nav__list.login li a .fa-solid {
+  margin-right: 1rem;
+}
+.navigation .navContenaire__account .nav__list.login li:hover {
+  background-color: #006fe7;
   transition: all 0.2s ease-in-out;
+}
+.navigation .navContenaire__account .nav__list.login button {
+  border: 0;
+  padding: 0;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+.navigation .navContenaire__account .nav__list.login button .fa-solid {
+  margin-right: 1rem;
+}
+.navigation .navContenaire__account .nav__list.login button:hover {
+  background-color: #006fe7;
+  transition: all 0.2s ease-in-out;
+}
+
+.toast-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.toast-message {
+  font-size: 1.3rem;
+}
+
+.toast-success {
+  background-color: #27a648;
+  padding: 6px 6px 6px 50px !important;
 }
 
 .form-contenaire {
@@ -262,6 +428,65 @@ li {
   margin-left: auto;
   margin-right: auto;
   font-size: 1.6rem;
+}
+
+.modal-contenaire {
+  z-index: 5000;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+.modal-contenaire .content-confirm {
+  background-color: white;
+  width: 500px;
+  font-size: 1.6rem;
+  padding: 5rem 4rem;
+  border-radius: 5px;
+  animation: showModal 0.3s ease-out both;
+}
+.modal-contenaire .content-confirm p {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.modal-contenaire .content-confirm div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+.modal-contenaire .content-confirm div button {
+  font-size: 1.6rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.modal-contenaire .content-confirm div button:nth-child(1) {
+  margin-right: 2rem;
+}
+
+.modal-contenaire.activeModal {
+  display: none;
+}
+
+main {
+  position: relative;
+}
+
+@keyframes showModal {
+  from {
+    transform: translateY(-400px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

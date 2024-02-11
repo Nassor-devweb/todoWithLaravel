@@ -1,0 +1,61 @@
+.modal-contenaire {
+    z-index: 5000;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s ease-in-out;
+    .content-confirm {
+
+        background-color: white;
+        width: 500px;
+        font-size: 1.6rem;
+        padding: 5rem 4rem;
+        border-radius: 5px;
+        animation: showModal  0.3s ease-out both;
+        p {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            button {
+                font-size: 1.6rem;
+                padding: 0.5rem 1rem;
+                font-weight: bold;
+                box-shadow: $box-shadow;
+            }
+            button:nth-child(1){
+                margin-right: 2rem;
+            }
+        }
+
+    }
+}
+
+.modal-contenaire.activeModal {
+    display: none;
+}
+
+main {
+    position: relative;
+}
+
+
+@keyframes showModal {
+    from {
+        transform: translateY(-400px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

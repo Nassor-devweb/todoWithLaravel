@@ -5,26 +5,130 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem 2rem;
+    padding: 0rem 2rem;
+    height: 5.6rem;
     h1 {
         margin: 0;
-        padding: 1rem 2rem;
+        font-size: 2rem;
+        padding: 0.5rem 2rem;
     }
-
-    .nav__list {
+    .navContenaire__account {
+        position: relative;
         display: flex;
+        .notificationContener {
+            .notificationContener__icone {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 4rem;
+                height: 4rem;
+                padding: 1rem;
+                background-color: darken($primary-color,8%);
+                border-radius: 50%;
+                .fa-solid {
+                    font-size: 2rem;
+                }
+                .notificationContener__number {
+                    border-radius: 50%;
+                    margin: auto;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 1.9rem;
+                    height: 1.9rem;
+                    background-color: $notificationColor;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transform: translate(40%,-20%);
+                }
+            }
 
-        li {
-            a {
-                color: white;
-                padding: 1rem 2rem;
+        }
 
-                &:hover {
-                    background-color: #3498db;
-                    transition: all 0.2s ease-in-out;
+        .userInfo {
+            margin: 0 2rem;
+            .contentImg {
+                position: relative;
+                img {
+                    width: 4rem;
+                    height: 4rem;
+                    border-radius: 50%;
+                }
+                .fa-solid {
+                    position: absolute;
+                    bottom: -0.5rem;
+                }
+            }
+            .nav__list{
+                min-width: 20rem;
+                font-size: 2rem;
+                li {
+                    padding: 1rem 1rem;
+                    a{
+                        color: white;
+                    }
                 }
             }
         }
+        .nav__list.login {
+            //display: none;
+            background-color: #ecf0f1;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            right: 0;
+            bottom: -16rem;
+            z-index: 500;
+            li {
+                border-top: 0.05rem solid #bdc3c7;
+                a {
+                    color: black!important;
+                    display: flex;
+                    align-items: center;
+                    .fa-regular,.fa-solid  {
+                        margin-right: 1rem;
+                    }
+                }
+                &:hover {
+                    background-color: darken($primary-color, 5%);
+                    transition: all 0.2s ease-in-out;
+
+                }
+            }
+            button{
+                border: 0;
+                padding: 0;
+                color: black;
+                display: flex;
+                align-items: center;
+                .fa-solid {
+                    margin-right: 1rem;
+                }
+                &:hover {
+                    background-color: darken($primary-color, 5%);
+                    transition: all 0.2s ease-in-out;
+
+                }
+            }
+
+        }
+
     }
 
+}
+
+.toast-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.toast-message {
+    font-size: 1.3rem;
+}
+.toast-success {
+    background-color: $doneColor;
+    padding: 6px 6px 6px 50px!important;
 }
